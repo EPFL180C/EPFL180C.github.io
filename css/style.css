@@ -4,7 +4,7 @@
     box-sizing: border-box;
     --white: #ffffff;
     --black: #000000;
-    --dark-grey: #424141;
+    --dark-grey: #424242;
     --shadow-grey: #bfbfbf;
     --light-grey: #e3e3e3;
     --pastel-red: #f39ea1;
@@ -30,52 +30,426 @@ body{
 
 /* ------------------------ Navbar ------------------------ */
 
-nav{
+nav {
     position: fixed;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    height: 100px;
+    height: 80px;
     width: 100%;
     font-family: 'Roboto', sans-serif;
     background-color: var(--pastel-orange);
     z-index: 2;
 }
 
-.nav-logo{
+.nav-logo {
     width: 60px;
     cursor: pointer;
+    transition: all 0.2s ease-in-out;
 }
 
-.nav-logo:hover{
-    opacity: 0.7;
-    transition: all 0.3s ease;
+.nav-logo:hover {
+    transform: scale(1.2);
 }
 
-.nav-links{
+.nav-links {
     display: flex;
-    justify-content: space-between;
     width: 30%;
-    transition: all 0.3s ease;
+    transition: all 0.2s ease-in-out;
 }
 
-.nav-links li{
+.nav-links li {
     list-style: none;
+    transition: inherit;
+    cursor: pointer;
 } 
 
-.nav-links a{
+.nav-links a {
     color: var(--white);
     text-decoration: none;
     letter-spacing: 3px;
+    font-weight: normal;
+    font-size: 20px;
+    transition: inherit;
+    padding: 29px 40px;
+}
+
+.nav-links .current > a {
+    font-weight: 900;
+}
+
+.nav-links a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* ------------------------ Animation Background ------------------------ */
+
+.shape-area {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.svgImage {
+    filter: blur(5px);
+    position: absolute;
+    display: block;
+    list-style: none;
+    z-index: -1;
+}
+
+/* ----------------------------- Content ----------------------------- */
+
+.recipes {
+    margin-left: 20vw;
+    margin-right: 20vw;
+    padding-bottom: 100px;
+}
+
+.daily-recipe {
+    position: relative;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: left;
+    justify-content: space-between;
+    margin: auto;
+    background-color: var(--pastel-purple);
+}
+
+.daily-recipe img{
+    width: 50%;
+    right: 0;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.daily-recipe img:hover{
+    filter: brightness(0.5);
+}
+
+.daily-text {
+    display: block;
+    justify-content: left;
+    margin-left: 5%;
+    margin-right: 5%;
+    position: absolute;
+    bottom: 10%;
+    left: 0;
+    max-width: 40%;
+}
+
+.daily-text h1{
+    font-family: 'Cooper Black';
+    color: var(--white);
+    text-decoration: none;
+    letter-spacing: 3px;
+    font-size: 70px;
+    top: 0;
+    margin-bottom: 25px;
+}
+
+.daily-text h2{
+    font-family: 'Lato';
+    color: var(--white);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 40px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.daily-text h2:hover{
+    text-decoration: underline;
+}
+
+.daily-text p{
+    font-family: 'Lato';
+    color: var(--light-grey);
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.sub-recipe-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.sub-recipe {
+    width: 14vw;
+    background-color: var(--pastel-purple);
+}
+
+.sub-recipe img {
+    width: 100%;
+    top: 0;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.sub-recipe img:hover{
+    filter: brightness(0.5);
+}
+
+.sub-text{
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    min-height: 90px;
+}
+
+.sub-text h2{
+    font-family: 'Lato';
+    color: var(--white);
+    text-decoration: none;
     font-weight: bold;
     font-size: 20px;
+    margin-bottom: 7px;
+    cursor: pointer;
     transition: all 0.3s ease;
 }
 
-.nav-links a:hover{
-    opacity: 0.7;
+.sub-text h2:hover{
+    text-decoration: underline;
 }
 
-.nav-links a:active{
-    opacity: 0.7;
+.sub-text p{
+    font-family: 'Lato';
+    color: var(--light-grey);
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.text-container {
+      display: block;
+      padding-left: 17vw;
+      padding-right: 17vw;
+}
+
+.text-container h1{
+    font-family: 'Cooper Black';
+    color: var(--dark-grey);
+    text-decoration: none;
+    letter-spacing: 3px;
+    font-size: 60px;
+    padding-top: 40px;
+    padding-bottom: 20px;
+}
+
+.text-container p{
+    font-family: 'Lato', sans-serif;
+    color: var(--dark-grey);
+    text-decoration: none;
+    letter-spacing: 3px;
+    font-size: 25px;
+    padding-top: 20px;
+}
+
+.recipes .cta {
+    margin: 10px;
+    text-align: center; 
+}
+
+.recipes button {
+    background-color: var(--light-grey);
+    color: var(--pastel-purple);
+}
+
+.recipes button:hover {
+    color: var(--dark-pastel-purple);
+    transform: scale(1);
+}
+
+.title-container {
+    display: block;
+    align-items: center;
+    justify-content: space-between;
+    margin: auto;
+    height: 90vh;
+    position: relative;
+}
+
+.title-shape {
+    position: relative;
+    width: 50vw;
+    left: 33vw;
+    top: 10%;
+    transition: all 0.3s ease;
+}
+
+.title-shape:hover {
+    transform: rotate(10deg);
+}
+
+.title-text {
+    text-align: justify;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-60%);
+    transform: translateY(-60%);
+    margin-left: 21%;
+    margin-right: 40%;
+    font-family: Lato;
+    color: var(--dark-grey);
+    z-index: 1;
+}
+
+.title-text:hover ~ .title-shape{
+    transform: rotate(10deg);
+}
+
+.title-text h1 {
+    font-family: "Cooper Black";
+    font-size: 100px;
+}
+
+.title-text p {
+    font-size: 30px;
+}
+
+.container-red {
+    background-color: var(--pastel-red);
+}
+
+.container-orange {
+    background-color: var(--pastel-orange);
+}
+
+.container-yellow {
+    background-color: var(--pastel-yellow);
+}
+
+.container-green {
+    background-color: var(--pastel-green);
+}
+
+.container-blue {
+    background-color: var(--pastel-blue);
+}
+
+.container-purple {
+    background-color: var(--pastel-purple);
+}
+
+.container-white {
+    background-color: var(--white);
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: auto;
+    margin-left: 20vw;
+    margin-right: 20vw;
+    transition: all 0.3s ease;
+    z-index: 1;
+    margin-bottom: 100px;
+}
+
+.shape-element {
+    position: relative;
+    width: 500px;
+    align-items: center;
+    padding: 10px;
+    z-index: 1;
+}
+
+.shape {
+    transition: all 0.3s ease;
+}
+
+.shape-element:hover .shape{ 
+    transform: scale(1.1) rotate(15deg);
+ }
+
+
+.shape-text {
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.shape-text h1{
+    font-family: 'Cooper Black';
+    font-size: 40px;
+    font-weight: bold;
+    color: var(--dark-grey);
+}
+
+.shape-text p{
+    font-family: 'Lato';
+    font-size: 20px;
+    color: var(--dark-grey);
+}
+
+.cta button {
+    margin-top: 15px;
+    border: none;
+    border-radius: 5px;
+    font-family: 'Lato', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--white);
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.cta button:hover{
+    transform: scale(1.2);
+}
+
+  
+/* ----------------------------- Footer ----------------------------- */
+
+footer{
+    position: absolute;
+    width: 100%;
+    height: 150px;
+    z-index: 2;
+    background-color: var(--dark-grey);
+}
+
+.footer-content{
+    font-family: 'Lato';
+    display: block;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.footer-content p{
+    color: var(--white);
+    padding-top: 25px;
+    padding-bottom: 15px;
+    font-size: 15px;
+}
+
+.footer-content ul{
+    list-style: none;
+    display: inline-flex;
+    padding-top: 10px;
+}
+
+.footer-content li{
+    padding: 10px;
+}
+
+.fa-color{
+    color: var(--white);
 }
