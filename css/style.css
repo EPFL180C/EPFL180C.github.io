@@ -31,14 +31,13 @@ body{
 /* ------------------------ Navbar ------------------------ */
 
 nav{
-    position: relative;
+    position: fixed;
     display: flex;
     justify-content: space-around;
     align-items: center;
     height: 100px;
     font-family: 'Roboto', sans-serif;
     background-color: var(--pastel-orange);
-    top: 100vh;
     z-index: 2;
 }
 
