@@ -1,0 +1,81 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    --white: #ffffff;
+    --black: #000000;
+    --dark-grey: #424141;
+    --shadow-grey: #bfbfbf;
+    --light-grey: #e3e3e3;
+    --pastel-red: #f39ea1;
+    --pastel-orange: #f9c798;
+    --pastel-yellow: #f8f099;
+    --pastel-green: #c0dcb0;
+    --pastel-blue: #a6c7e7;
+    --pastel-purple: #c2b0e0;
+    --dark-pastel-purple: #9576c9;
+}
+
+/* ------------------------ General ------------------------ */
+
+html {
+    height: 100%;
+}
+
+body{
+    background-color: var(--light-grey);
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+/* ------------------------ Navbar ------------------------ */
+
+nav{
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100px;
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--pastel-orange);
+    top: 100vh;
+    z-index: 2;
+}
+
+.nav-logo{
+    width: 60px;
+    cursor: pointer;
+}
+
+.nav-logo:hover{
+    opacity: 0.7;
+    transition: all 0.3s ease;
+}
+
+.nav-links{
+    display: flex;
+    justify-content: space-between;
+    width: 30%;
+    transition: all 0.3s ease;
+}
+
+.nav-links li{
+    list-style: none;
+} 
+
+.nav-links a{
+    color: var(--white);
+    text-decoration: none;
+    letter-spacing: 3px;
+    font-weight: bold;
+    font-size: 20px;
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover{
+    opacity: 0.7;
+}
+
+.nav-links a:active{
+    opacity: 0.7;
+}
